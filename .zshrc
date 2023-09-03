@@ -103,3 +103,4 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+alias idea="/snap/intellij-idea-community/434/bin/idea.sh"
