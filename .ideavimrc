@@ -3,8 +3,11 @@ let mapleader = " "
 " -- Plugins --
 set surround
 set multicursor
-set easymotion
 set NERDTree
+
+Plug 'easymotion/vim-easymotion'
+map <leader>J <Plug>(easymotion-s)
+map <leader>j <Plug>(easymotion-f)
 
 " -- General settings --
 set showmode
@@ -24,9 +27,23 @@ map \r <Action>(ReformatCode)
 map <leader>b <Action>(ToggleLineBreakpoint)
 map <leader>/ <action>(ShowErrorDescription)
 nmap <leader>w <action>(CloseEditor)
-nnoremap <leader>n :NERDTreeToggle<CR>
+nnoremap <leader>n :NERDTree<CR>
 nnoremap <leader>t :action ActivateTerminalToolWindow<CR>
 nnoremap <c-f> :action Find<CR>
+nnoremap <leader>z :action ToggleDistractionFreeMode<CR>
+vnoremap y mcy`c
+
+" -- Navigation --
+nnoremap <c-\> :action SplitVertically<CR>
+nnoremap <c--> :action SplitHorizontally<CR>
+nnoremap <c-=> :action Unsplit<CR>
+nnoremap <c-m> :action MoveEditorToOppositeTabGroup<CR>
+sethandler <c-j> a:vim
+sethandler <c-k> a:vim
+nnoremap <c-h> <c-w>h
+nnoremap <c-l> <c-w>l
+nnoremap <c-j> <c-w>j
+nnoremap <c-k> <c-w>k
 
 " For local replace
 nnoremap gr gd[{V%::s/<C-R>///gc<left><left><left>
